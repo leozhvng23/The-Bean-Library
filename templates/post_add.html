@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="row center">
+    <div class="col-5 welcome">
+        <span class="large medium">Congrats! New bean added!</span>
+        <div>
+            <button id="postAddOption" onClick="location.href='/view/{{bean.id}}'"><span class="medium mediumLarge">View Bean</span></button>
+            <button id="postAddOption" onClick="location.href='/add_bean'"><span class="medium mediumLarge">New Entry</span></button>
+        </div>
+    </div>
+</div>    
+
+{% endblock %}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="icon" href="data:,">
+
+<!-- jquery -->
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ 
+  <!-- icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+
+    <title>The Bean Library</title>
+  </head>
+  <body>
+    
+    <div class="container">
+        <nav id="navbar" class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="/"><span class="site_title h1">The Bean Library</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-fle flex-row-reverse" id="navbarNavAltMarkup">
+              <form id="searchForm" class="form-inline my-2 my-lg-0">
+                  <input id="form_input" class="form-control mr-sm-2" type="search" placeholder="Search Beans" 
+                  aria-label="Search" required>
+                  <button id="search_button" type="submit" title="search"><i class="fa fa-search fa-2x"></i></button>
+              </form>           
+              <button id="add_bean" class="ui-button" onclick="location.href='/add_bean'"><span class="medium">Add Bean</span></button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">   
+        {% block content %}
+        {% endblock %}
+    </div>
+
+  </body>
+</html>

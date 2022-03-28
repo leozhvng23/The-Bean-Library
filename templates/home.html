@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+
+
+<script>
+    let beans = {{beans|tojson}}
+    console.log(beans)
+</script>
+
+<div class="row center">
+    <div class="col-12">
+        <div class="welcome" id="beanList">
+            <div class="row center">
+                <span class="extraLarge bold coffee">Featured Beans</span> 
+                <a href="/"><i class="fa fa-refresh fa-2x refresh" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="aboutTBL">
+            <span class="coffee mediumLarge bold">About The Bean Library</span>
+            <hr class="narrow">
+            <p class="content">The Bean Library is a curation of specialty coffee beans 
+                selected by coffee enthusiasts like you. Experience new flavors or make your own 
+                recommendations! Discover your next favorite cup with a simple search
+            and begin your barista journey from a single platform. 
+
+            </p>
+        </div>
+    </div>
+</div>
+
+</div>  
+
+{% endblock %}

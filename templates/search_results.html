@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'search.js') }}"></script>
+
+<script>
+    let results = {{results|tojson}}
+    let fields = {{fields|tojson}}
+    let count = {{count}}
+    console.log(results, fields)
+</script>
+
+<div class="row center">
+    <div class="col-8 welcome">
+        <span class="extraLarge medium coffee">Search results for "{{search_text}}"</span>
+        <div class="col-12" id="beanList"></div>
+    </div>
+</div>    
+
+{% endblock %}

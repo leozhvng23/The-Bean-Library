@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- Color-thief jquery plugin -->
+<script type="text/javascript" src="{{ url_for('static', filename = 'color-thief.umd.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'view.js') }}"></script>
+
+<div class="row">
+    <div class="container">
+        <div class="row center">
+            <div class="col-8">
+                <div class="image">
+                <img src="{{bean.image}}" id="bean_image" crossorigin="anonymous" alt="Product Packaging Design">
+                </div>
+                <div class="about">
+                    <span class="h2 medium">Roasted By:</span><span class="subtitle black">{{bean.roaster}}</span>
+                    <hr>
+                    <p class="content">{{bean.description}}</p>
+                </div>
+                <button id="editEntry" class="ui-button" onclick="location.href='/edit_bean/{{bean.id}}'">
+                    <span class="small book">Edit Bean</span>
+                </button>
+            </div>
+            <div class="col-3">
+                <div class="title">
+                    <span class="large bold">{{bean.name}}</span>
+                </div>
+                <div class="attributeList">
+                    <span class="h2 italic">Variety:</span>
+                    <ul>
+                        {% for v in bean.variety %}
+                            <li>{{v}}</li>
+                        {% endfor %}
+                    </ul>
+                    <span class="h2 italic">Notes:</span>
+                    <ul>
+                        {% for note in bean.notes %}
+                            <li>{{note}}</li>
+                        {% endfor %}
+                    </ul>
+                    <span class="h2 italic">Process:</span>
+                    <ul>
+                        {% for p in bean.process %}
+                            <li>{{p}}</li>
+                        {% endfor %}
+                    </ul>
+                    <hr>
+                    <span class="h2 italic">Elevation: </span><span class="rightAlign">{{bean.elevation}}m</span><br>
+                    <span class="h2 italic">Roast: </span><span class="rightAlign">{{bean.roast}}</span><br>
+                </div>
+            </div> 
+        </div>
+    </div>   
+</div>    
+
+{% endblock %}

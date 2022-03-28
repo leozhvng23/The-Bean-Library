@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'add.js') }}"></script>
+
+<div class="row">
+    <div class="container">
+        <div class="row center">
+            <div class="col-8">
+                <div class="editCard">
+                    <form id="editForm">
+                        <label for="name" class="medium mediumLarge">Bean name:</label><br>
+                        <input type="text" class="textbox" id="nameInput" name="name" placeholder="ex: {{bean.name}}" required><br>
+                        
+                        <label for="image" class="medium mediumLarge">Image URL:</label><br>
+                        <input type="url" class="textbox" id="imageInput" name="image" placeholder="full URL here" required><br>
+                        
+                        <label for="roaster" class="medium mediumLarge">Roasted by:</label><br>
+                        <input type="text" class="textbox" id="roasterInput" name="roaster" placeholder="ex: {{bean.roaster}}" required><br>
+                        
+                        <label for="description" class="medium mediumLarge">Description:</label><br>
+                        <textarea class="textbox" id="descriptionInput" name="description" form="editForm" wrap="soft" rows="6" required></textarea><br>
+                        
+                        <label for="variety" class="medium mediumLarge">Variety:</label><br>
+                        <input type="text" class="textbox" id="varietyInput" name="variety" placeholder="ex: Castillo Tambo,Gesha (use ' , ' to separate)" required><br>
+                        
+                        <label for="process" class="medium mediumLarge">Process:</label><br>
+                        <input type="text" class="textbox" id="processInput" name="process" placeholder="ex: Washed,Raised Bed Dried (use ' , ' to separate)" required><br>
+                        
+                        <label for="notes" class="medium mediumLarge">Notes:</label><br>
+                        <input type="text" class="textbox" id="notesInput" name="notes" placeholder="ex: Dark Fruit,Yellow Tropicals (use ' , ' to separate)"required><br>
+
+                        <label for="elevation" class="medium mediumLarge">Elevation:</label><br>
+                        <input type="text" class="textbox" id="elevationInput" name="elevation" placeholder="(in meters)" required><br>
+
+                        <label for="roast" class="medium mediumLarge">Roast:</label><br>
+                        <input type="text" class="textbox" id="roastInput" name="roast" placeholder="ex: {{bean.roast}}" required><br>
+
+                        <button id="editSubmit" type="submit" title="Submit"><span class="medium mediumLarge">Submit</span></button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>    
+
+{% endblock %}

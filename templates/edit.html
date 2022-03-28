@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!-- Color-thief jquery plugin -->
+<script type="text/javascript" src="{{ url_for('static', filename = 'edit.js') }}"></script>
+<script>
+    let bean = {{bean|tojson}}
+    console.log(bean)
+</script>
+
+<div class="row">
+    <div class="container">
+        <div class="row center">
+            <div class="col-8">
+                <div class="editCard">
+                    <form id="editForm">
+                        <label for="name" class="medium mediumLarge">Bean name:</label><br>
+                        <input type="text" class="textbox" id="nameInput" name="name" value="{{bean.name}}" required><br>
+                        
+                        <label for="image" class="medium mediumLarge">Image URL:</label><br>
+                        <input type="url" class="textbox" id="imageInput" name="image" value="{{bean.image}}" required><br>
+                        
+                        <label for="roaster" class="medium mediumLarge">Roasted by:</label><br>
+                        <input type="text" class="textbox" id="roasterInput" name="roaster" value="{{bean.roaster}}" required><br>
+                        
+                        <label for="description" class="medium mediumLarge">Description:</label><br>
+                        <textarea class="textbox" id="descriptionInput" name="description" form="editForm" wrap="soft" rows="6" required>{{bean.description}}</textarea><br>
+                        
+                        <label for="variety" class="medium mediumLarge">Variety:</label><br>
+                        <input type="text" class="textbox" id="varietyInput" name="variety" required><br>
+                        
+                        <label for="process" class="medium mediumLarge">Process:</label><br>
+                        <input type="text" class="textbox" id="processInput" name="process" required><br>
+                        
+                        <label for="notes" class="medium mediumLarge">Notes:</label><br>
+                        <input type="text" class="textbox" id="notesInput" name="notes" required><br>
+
+                        <label for="elevation" class="medium mediumLarge">Elevation:</label><br>
+                        <input type="text" class="textbox" id="elevationInput" name="elevation" value="{{bean.elevation}}" required><br>
+
+                        <label for="roast" class="medium mediumLarge">Roast:</label><br>
+                        <input type="text" class="textbox" id="roastInput" name="roast" value="{{bean.roast}}" required><br>
+
+                        <button id="editSubmit" type="submit"><span class="medium mediumLarge">Submit</span></button>
+                        <button id="editDiscard" type="button"><span class="medium mediumLarge">Discard Changes</span></button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>    
+
+{% endblock %}
