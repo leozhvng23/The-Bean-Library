@@ -81,7 +81,7 @@ beans = {
     "7":{
         "id": "7",
         "name": "Costa Rica Las Lajas SL28 Natural",
-        "image": "https://cdn.shopify.com/s/files/1/1707/3261/products/CostaRicaLasLajasSL28Natural.png?v=1644960155",
+        "image": "https://cdn.shopify.com/s/files/1/1707/3261/products/CostaRicaLasLajas-10oz.png?v=1648490427",
         "roaster" : "Oynx",
         "variety": ["SL-28"],
         "process": ["Natural", "Patio Dried"],
